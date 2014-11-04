@@ -14,7 +14,6 @@
 
     render: function () {
       var form_html = $('#addFeels').html();
-      console.log(form_html);
       this.$el.html(form_html);
     },
 
@@ -24,13 +23,11 @@
       // Grab feel values from my form
       var feels_title = $('#title').val();
       var feels_cause = $('#cause').val();
-      var feels_type = $('#type').val();
 
       // Create a new Feel
       var feel = new App.Models.Feeling({
         title: feels_title,
         cause: feels_cause,
-        type: feels_type
       });
 
       // Add to our collection & save to server
