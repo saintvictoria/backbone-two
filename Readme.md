@@ -2,6 +2,12 @@
 
 Second backbone app built in class.
 
+Backbone-two, a class project.
+
+*master = what we id in class
+*initial = what we did monday
+*structure = tuesday work
+
 
 I installed backbone.
 
