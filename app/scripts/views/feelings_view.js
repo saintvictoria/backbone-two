@@ -1,33 +1,37 @@
-var FeelingsView = Backbone.View.extend({
+(function () {
 
- tagName: 'ul',
- className: 'feels',
+  App.Views.FeelingsView = Backbone.View.extend({
 
- 
- initialize: function(options){
-   this.render(options.collection);
- },
+    tagName: 'ul',
+    className: 'feels',
 
- render: function(collection){
-   //binding this to self for use in nested callbacks
+    initialize: function () {
+      this.render(App.all_feelings);
+    },
 
-   var self = this;
+    render: function (collection) {
+      // Binding `this` to `self` for use in
+      // nested functions/callbacks
+      var self = this;
 
-   //straight up underscore template
-   var template =$('#feels').html();
-   var rendered =_.template(template);
+      // Straight up Underscore Template Goodness
+      var template = $('#feels').html();
+      var rendered = _.template(template);
 
-//iterating over our models
-   _.each(collection.models, function(c){
-     //each iteration...appendimg the data
-     //to our elemant that backbone created
-     self.$el.append(rendered(c.attributes));
+      // Iterating over our models
+      _.each(collection.models, function (c) {
+          // Each iteration... appending the data
+          // to our element that Backbone created
+          self.$el.append(rendered(c.attributes));
+      });
 
-   });
- //take the data and append it into a specific element
- //on my page
-   $('#feelsContainer').html(this.el);
-   return this;
- }
+      // Take the data and append it into a specific element
+      // on my page
+      $('#feelsContainer').html(this.el);
 
-});
+      return this;
+    }
+
+  });
+
+}());

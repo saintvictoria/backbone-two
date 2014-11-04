@@ -1,15 +1,21 @@
-var Feeling = Backbone.Model.extend({
 
-  defaults: {
-    title: '',
-    cause: '',
-    type: ''
-  },
 
-  idAttribute: '_id',
+(function () {
 
-  initialize: function(){
-    var feel = this.get('title');
-  }
+  App.Models.Feeling = Backbone.Model.extend({
 
-});
+    defaults: {
+      title: '',
+      cause: '',
+      type: ''
+    },
+
+    idAttribute: '_id',
+
+    initialize: function () {
+      var feel = this.get('title');
+    }
+
+  });
+
+}());

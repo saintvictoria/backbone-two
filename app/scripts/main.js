@@ -1,9 +1,15 @@
-//create an instance of our feelings
-var all_feelings = new Feelings();
+(function () {
 
-//pull our feelings from the server
-all_feelings.fetch().done(function (){
- new FeelingsView({
-   collection: all_feelings
- });
-});
+  // Add our Form
+  new App.Views.FeelingsAdd();
+
+  // Create instance of Feelings Collection
+  App.all_feelings = new App.Collections.Feelings();
+
+  // Pull our feelings from our server
+  App.all_feelings.fetch().done( function () {
+    new App.Views.FeelingsView();
+  });
+
+
+}());

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>backbone two</title>
+    <title>backbone_second</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -24,12 +24,25 @@
   <body>
 
     <div class="hero-unit">
-      <h1>Backbone Feelings!</h1>
+      <h1>'Allo, 'Allo!</h1>
+      <div id="feelsAdder"></div>
       <div id="feelsContainer"></div>
     </div>
-<script type="text/template" id="feels">
+
+    <script type="text/template" id="feels">
         <li>I feel <%= title %> because <%= cause %></li>
     </script>
+
+    <script type="text/template" id="addFeels">
+      <form id="feelsAdd">
+      I feel <input type="text" id="title"/>
+      because <input type="text" id="cause"/>
+      <br />
+      This feeling is <input type="text" id="type"/>
+      <button> Add Feel</button>
+      </form>
+    </script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -38,11 +51,21 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/models/feelings_model.js"></script>
-        <script src="scripts/collections/feelings_collection.js"></script>
-        <script src="scripts/views/feelings_view.js"></script>
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <script type="text/javascript">
+        window.App = {};
+        App.Models = {};
+        App.Collections = {};
+        App.Views = {};
+    </script>
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/models/feelings_model.js"></script>
+    <script src="scripts/collections/feelings_collection.js"></script>
+    <script src="scripts/views/feelings_view.js"></script>
+    <script src="scripts/views/feelings_add_view.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+
 </body>
 </html>
