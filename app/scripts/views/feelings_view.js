@@ -16,6 +16,8 @@
 
       App.all_feelings.on('sync', this.render, this);
       App.all_feelings.on('destroy', this.render, this);
+
+      $('#feelsContainer').html(this.el);
     },
 
     render: function () {
@@ -39,7 +41,7 @@
 
       // Take the data and append it into a specific element
       // on my page
-      $('#feelsContainer').html(this.el);
+
 
       return this;
     },
